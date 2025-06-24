@@ -27,7 +27,9 @@ This project is built with a **Layered Architecture** to ensure modularity, scal
 - **Home** – Brief intro and visual hook
 - **About Me** – My journey and philosophy
 - **Work** – Sample projects and freelance work
-- (Backend secured; tokens, APIs, and DB connections excluded from this repository.)
+- **Posting System** – A personal content management feature for publishing updates or works  
+  > 🔒 **Note:** Posting system is privately authenticated and accessible only by me
+
 
 ## Tech Stack
 
