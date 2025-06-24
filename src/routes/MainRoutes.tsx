@@ -31,9 +31,9 @@ export const MainRoutes = createBrowserRouter([
     element: <HomeLayout />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: "about", element: <AboutPage /> },
-      { path: "work", element: <WorkPage /> },
-      { path: "blog", element: <BlogPage /> },
+      { path: "about-page", element: <AboutPage /> },
+      { path: "work-page", element: <WorkPage /> },
+      { path: "blog-page", element: <BlogPage /> },
     ],
   },
 
