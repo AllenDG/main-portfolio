@@ -63,7 +63,7 @@ This project is built with a **Layered Architecture** to ensure modularity, scal
    ```
 2. Navigate to the project directory:
    ```bash
-   cd main-ortfolio
+   cd main-portfolio
    ```
 3. Install dependencies:
    ```bash

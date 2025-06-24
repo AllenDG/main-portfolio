@@ -17,10 +17,12 @@
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.6.0",
     "formik": "^2.4.6",
+    "jwt-decode": "^4.0.0",
     "lucide-react": "^0.522.0",
     "motion": "^12.19.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.2",
     "tailwind-merge": "^3.3.1",
     "yup": "^1.6.1",
     "zustand": "^5.0.5"
