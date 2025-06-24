@@ -14,7 +14,7 @@ It serves as a storytelling-driven space to showcase who I am, what I do, and ho
 It features smooth transitions, clean UI, and a layered tech architecture that mirrors my professional workflow.
 
 
-## Architecture
+## 🧱 Architecture
 
 This project is built with a **Layered Architecture** to ensure modularity, scalability, and separation of concerns.
 
