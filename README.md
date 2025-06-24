@@ -6,7 +6,7 @@
 ![MySQL](https://img.shields.io/badge/MySQL-00758F?style=for-the-badge&logo=mysql&logoColor=white)
 ![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 
-## 📖 Description
+## Description
 
 This is my personal portfolio designed for general-purpose use.  
 It serves as a storytelling-driven space to showcase who I am, what I do, and how I work from design to development.  
@@ -14,18 +14,18 @@ It serves as a storytelling-driven space to showcase who I am, what I do, and ho
 It features smooth transitions, clean UI, and a layered tech architecture that mirrors my professional workflow.
 
 
-## 🧱 Architecture
+## Architecture
 
 This project is built with a **Layered Architecture** to ensure modularity, scalability, and separation of concerns.
 
-## ✨ Features
+## Features
 
 - **Home** – Brief intro and visual hook
 - **About Me** – My journey and philosophy
 - **Work** – Sample projects and freelance work
 - (Backend secured; tokens, APIs, and DB connections excluded from this repository.)
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Frontend**
   - ReactJS
@@ -43,7 +43,7 @@ This project is built with a **Layered Architecture** to ensure modularity, scal
   - Express.js
   - MySQL
 
-## 🖥 Project Setup
+## Project Setup
 
 ## Prerequisites
 - Node.js (>= 16.x)
