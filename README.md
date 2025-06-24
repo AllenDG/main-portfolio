@@ -9,7 +9,8 @@
 ## 📖 Description
 
 This is my personal portfolio designed for general-purpose use.  
-It serves as a storytelling-driven space to showcase who I am, what I do, and how I work—from design to development.  
+It serves as a storytelling-driven space to showcase who I am, what I do, and how I work from design to development.  
+
 It features smooth transitions, clean UI, and a layered tech architecture that mirrors my professional workflow.
 
 ## ✨ Features
