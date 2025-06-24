@@ -13,6 +13,11 @@ It serves as a storytelling-driven space to showcase who I am, what I do, and ho
 
 It features smooth transitions, clean UI, and a layered tech architecture that mirrors my professional workflow.
 
+
+## Architecture
+
+This project is built with a **Layered Architecture** to ensure modularity, scalability, and separation of concerns.
+
 ## ✨ Features
 
 - **Home** – Brief intro and visual hook
@@ -40,14 +45,29 @@ It features smooth transitions, clean UI, and a layered tech architecture that m
 
 ## 🖥 Project Setup
 
-### Prerequisites
+## Prerequisites
 - Node.js (>= 16.x)
 - Yarn (or npm)
 
-### Installation
 
-#### Frontend
-```bash
-cd frontend
-yarn install
-yarn dev
+## Installation
+1. Clone the repository:
+   ```bash
+   https://github.com/AllenDG/main-portfolio.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd portfolio
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+5. Open the app in your browser at [http://localhost:5173](http://localhost:5173).
+
+## Contributors
+- [Allen Walter De Guzman](https://github.com/AllenDG)
