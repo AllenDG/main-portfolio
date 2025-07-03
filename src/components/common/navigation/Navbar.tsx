@@ -1,3 +1,7 @@
+
+import { FloatingDock } from "@/components/ui/floating-dock";
+import { NavbarRoutes } from "@/routes/NavbarRoutes";
+
 export default function Navbar() {
-  return <div>Navbar</div>;
+  return <FloatingDock items={NavbarRoutes} />;
 }
