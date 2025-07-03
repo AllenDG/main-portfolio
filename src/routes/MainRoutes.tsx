@@ -1,18 +1,17 @@
-
-
-// Misc
-import AdminLayout from "@/components/layouts/AdminLayout";
-import HomeLayout from "@/components/layouts/HomeLayout";
-import AdminDashboard from "@/pages/admin/AdminDashboard";
-import BlogPage from "@/pages/blog/BlogPage";
-import HomePage from "@/pages/home/HomePage";
-import LoginPage from "@/pages/LoginPage";
-import WorkPage from "@/pages/work/WorkPage";
-import AboutPage from "@/pages/about-me/AboutMePage"
+// React Router
 import { createBrowserRouter } from "react-router-dom";
-import NotFound from "@/pages/NotFound";
-import ProtectedRoute from "./ProtectedRoute";
 
+// Layouts
+import HomeLayout from "@/components/layouts/HomeLayout";
+
+// Pages
+import HomePage from "@/pages/home/HomePage";
+import AboutPage from "@/pages/about-me/AboutMePage";
+import WorkPage from "@/pages/work/WorkPage";
+import BlogPage from "@/pages/blog/BlogPage";
+
+import NotFound from "@/pages/NotFound";
+import ContactPage from "@/pages/contact/ContactPage";
 
 export const MainRoutes = createBrowserRouter([
   {
@@ -21,12 +20,6 @@ export const MainRoutes = createBrowserRouter([
   },
 
   {
-    path: "/login",
-    element: <LoginPage />,
-  },
-
-  // 🌐 Public Routes (for all users)
-  {
     path: "/",
     element: <HomeLayout />,
     children: [
@@ -34,19 +27,7 @@ export const MainRoutes = createBrowserRouter([
       { path: "about-page", element: <AboutPage /> },
       { path: "work-page", element: <WorkPage /> },
       { path: "blog-page", element: <BlogPage /> },
-    ],
-  },
-
-  // 🔐 Admin-only Routes
-  {
-    path: "/admin",
-    element: (
-      <ProtectedRoute allowedRoles={["admin"]}>
-        <AdminLayout />
-      </ProtectedRoute>
-    ),
-    children: [
-      { path: "dashboard", element: <AdminDashboard /> },
+      { path: "contact-page", element: <ContactPage /> },
     ],
   },
 ]);
