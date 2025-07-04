@@ -11,7 +11,7 @@ if (!root) throw new Error('Root element not found');
 
 ReactDOM.createRoot(root).render(
   <React.StrictMode>
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+    <ThemeProvider attribute="class">
       <RouterProvider router={MainRoutes} />
     </ThemeProvider>
   </React.StrictMode>

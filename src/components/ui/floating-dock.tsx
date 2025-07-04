@@ -10,11 +10,14 @@ import {
 } from "framer-motion";
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { useTheme } from "next-themes";
+import { Moon, Sun } from "lucide-react";
 
 interface DockItem {
   title: string;
   icon: React.ReactNode;
-  href: string;
+  href?: string;
+  onClick?: () => void;
 }
 
 export const FloatingDock = ({
@@ -36,8 +39,16 @@ export const FloatingDock = ({
       )}
     >
       {items.map((item) => (
-        <VerticalDockItem key={item.title} mouseY={mouseY} {...item} />
+        <VerticalDockItem
+          key={item.title}
+          mouseY={mouseY}
+          title={item.title}
+          icon={item.icon}
+          href={item.href}
+          onClick={item.onClick}
+        />
       ))}
+      <ThemeToggleItem mouseY={mouseY} />
     </motion.div>
   );
 };
@@ -47,11 +58,13 @@ function VerticalDockItem({
   title,
   icon,
   href,
+  onClick,
 }: {
   mouseY: MotionValue;
   title: string;
   icon: React.ReactNode;
-  href: string;
+  href?: string;
+  onClick?: () => void;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const distance = useTransform(mouseY, (val) => {
@@ -60,11 +73,7 @@ function VerticalDockItem({
   });
 
   const sizeTransform = useTransform(distance, [-100, 0, 100], [48, 72, 48]);
-  const iconSizeTransform = useTransform(
-    distance,
-    [-100, 0, 100],
-    [24, 32, 24]
-  );
+  const iconSizeTransform = useTransform(distance, [-100, 0, 100], [24, 32, 24]);
 
   const size = useSpring(sizeTransform, {
     mass: 0.1,
@@ -80,8 +89,17 @@ function VerticalDockItem({
 
   const [hovered, setHovered] = useState(false);
 
+  const Wrapper = ({ children }: { children: React.ReactNode }) =>
+    href ? (
+      <Link to={href}>{children}</Link>
+    ) : (
+      <button onClick={onClick} className="focus:outline-none">
+        {children}
+      </button>
+    );
+
   return (
-    <Link to={href}>
+    <Wrapper>
       <motion.div
         ref={ref}
         style={{ width: size, height: size }}
@@ -103,15 +121,26 @@ function VerticalDockItem({
         </AnimatePresence>
 
         <motion.div
-          style={{
-            width: iconSize,
-            height: iconSize,
-          }}
+          style={{ width: iconSize, height: iconSize }}
           className="flex items-center justify-center"
         >
           {icon}
         </motion.div>
       </motion.div>
-    </Link>
+    </Wrapper>
+  );
+}
+
+function ThemeToggleItem({ mouseY }: { mouseY: MotionValue }) {
+  const { theme, setTheme } = useTheme();
+  const isDark = theme === "dark";
+
+  return (
+    <VerticalDockItem
+      mouseY={mouseY}
+      title={isDark ? "Light Mode" : "Dark Mode"}
+      icon={isDark ? <Sun className="text-white" /> : <Moon className="text-black" />}
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+    />
   );
 }
