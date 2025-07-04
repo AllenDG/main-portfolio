@@ -1,32 +1,17 @@
-"use client";
-
-import { Moon, Sun } from "lucide-react";
+// src/components/ui/mode-toggle.tsx
 import { useTheme } from "next-themes";
-import { Button } from "@/components/ui/button";
-import { useEffect, useState } from "react";
+import { Moon, Sun } from "lucide-react";
 
-export function ModeToggle() {
-  const { setTheme, theme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
+export default function ModeToggle() {
+  const { theme, setTheme } = useTheme();
 
   return (
-    <Button
-      variant="ghost"
-      size="icon"
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      aria-label="Toggle theme"
+    <button
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      className="rounded-full p-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white transition"
+      title="Toggle Theme"
     >
-      {theme === "light" ? (
-        <Moon className="h-5 w-5" />
-      ) : (
-        <Sun className="h-5 w-5" />
-      )}
-    </Button>
+      {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+    </button>
   );
 }

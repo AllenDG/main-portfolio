@@ -1,8 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Custom variant for dark mode */
 @custom-variant dark (&:is(.dark *));
 
+/* Design tokens */
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -41,6 +43,7 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* Light Theme */
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -76,6 +79,7 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+/* Dark Theme */
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -114,8 +118,12 @@
   * {
     @apply border-border outline-ring/50;
   }
+
+  html {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground transition-colors duration-300;
   }
 }
-
