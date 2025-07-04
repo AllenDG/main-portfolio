@@ -1,0 +1,54 @@
+[
+  {
+    "title": "2025",
+    "sections": [
+      {
+        "heading": "Internship Program",
+        "details": [
+          "Completed a 500-hour internship at Magsaysay People Resources Corporation. Contributed as a UI/UX and Frontend Developer, focusing on real-world web applications and user-centered design."
+        ]
+      },
+      {
+        "heading": "Freelance Projects",
+        "details": [
+          "Admin Gym Management System — A web-based platform designed to help gym administrators efficiently manage client subscriptions, monitor payment history, and track daily check-ins and logs. I was responsible for designing the mockups and developing the frontend.",
+          "Hiring Management System — A recruitment-focused system developed to streamline job postings, application tracking, and candidate evaluation for recruiters and HR departments. I designed the interface workflows and developed the frontend."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "2024",
+    "sections": [
+      {
+        "heading": "Capstone Collaboration",
+        "details": [
+          "Collaborated with a team on a capstone project as both UI/UX Designer and Frontend Developer. Produced high-fidelity prototypes and contributed to the frontend architecture of a web-based system."
+        ]
+      },
+      {
+        "heading": "Freelance & Personal Projects",
+        "details": [
+          "Initiated and completed multiple web development projects using modern frameworks including React and Tailwind CSS."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "2023",
+    "sections": [
+      {
+        "heading": "Hackathon Achievement",
+        "details": [
+          "Participated in the Madrid Pangasinan Hackathon and earned 3rd place. Designed and presented a full UI/UX concept to panelists, emphasizing functionality and user experience."
+        ]
+      },
+      {
+        "heading": "Freelancing & Design",
+        "details": [
+          "Began freelance work in graphic design, frontend development, and video editing. Delivered creative assets and responsive interfaces for various clients."
+        ]
+      }
+    ]
+  }
+]
