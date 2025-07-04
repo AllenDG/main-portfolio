@@ -1,4 +1,4 @@
-import { TimelineDemo } from "../components/TimelineDemo";
+import { TimelineDemo } from "@/pages/home/components/TimelineDemo";
 
 export default function ExperienceSection() {
   return (
