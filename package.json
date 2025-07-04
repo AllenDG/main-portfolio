@@ -14,6 +14,9 @@
     "@react-three/fiber": "^9.2.0",
     "@tabler/icons-react": "^3.34.0",
     "@tailwindcss/vite": "^4.1.10",
+    "@tsparticles/engine": "^3.8.1",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.8.1",
     "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",
@@ -28,6 +31,7 @@
     "react-router-dom": "^7.6.2",
     "tailwind-merge": "^3.3.1",
     "three": "^0.178.0",
+    "typewriter-effect": "^2.22.0",
     "yup": "^1.6.1",
     "zustand": "^5.0.5"
   },
