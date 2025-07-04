@@ -9,7 +9,7 @@ import {
   MotionValue,
 } from "framer-motion";
 import { LatestWorkItems } from "@/components/data/LatestWork";
-import TypeWriterTitle from "../components/TypeWriter";
+import TypeWriterTitle from "@/pages/home/components/TypeWriter";
 
 
 
