@@ -9,6 +9,7 @@ import {
   MotionValue,
 } from "framer-motion";
 import { LatestWorkItems } from "@/components/data/LatestWork";
+import TypeWriterTitle from "../components/TypeWriter";
 
 
 
@@ -52,7 +53,7 @@ export const HeroSection = () => {
   return (
     <div
       ref={ref}
-      className="h-[300vh] py-40 overflow-hidden antialiased relative flex flex-col [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[200vh] py-40 overflow-hidden antialiased relative flex flex-col [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -93,15 +94,18 @@ export const HeroSection = () => {
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl mx-auto py-20 md:py-40 px-4 w-full">
-      <h1 className="text-2xl md:text-7xl font-bold text-foreground">
-        Hello Welcome to my Journey <br /> Im a Frontend Developer
-      </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 text-muted-foreground">
-        A showcase of selected projects I've worked on recently, blending modern
-        UI/UX with clean frontend architecture.
-      </p>
-    </div>
+   <div className="max-w-7xl  py-20 md:py-40 px-4">
+  <h1 className="text-2xl md:text-7xl font-bold text-foreground">
+    Welcome to my Journey
+    <br />
+    <TypeWriterTitle className="text-2xl md:text-6xl font-bold" />
+  </h1>
+
+  <p className="max-w-2xl  text-base md:text-xl mt-8 text-muted-foreground">
+    A showcase of selected projects I've worked on recently, blending modern
+    UI/UX with clean frontend architecture.
+  </p>
+</div>
   );
 };
 
@@ -121,14 +125,14 @@ export const ProductCard = ({
       style={{ x: translate }}
       whileHover={{ y: -20 }}
       key={product.title}
-      className="group/product h-96 w-[30rem] relative shrink-0"
+      className="group/product h-96 w-[40rem] relative shrink-0"
     >
       <a href={product.link} className="block group-hover/product:shadow-2xl">
         <img
           src={product.thumbnail}
           height="600"
           width="600"
-          className="object-cover absolute h-full w-full inset-0 rounded-lg"
+          className="object-cover absolute h-full w-full inset-0 rounded-sm"
           alt={product.title}
         />
       </a>

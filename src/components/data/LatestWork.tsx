@@ -54,14 +54,5 @@ export const LatestWorkItems = [
     link: "/app/home-page",
      thumbnail: dormitory,
   },
-  {
-    title: "AI Hairstyle",
-    link: "/app/blog-page",
-    thumbnail: driveEase,
-  },
-  {
-    title: "Photo Studio",
-    link: "/app/contact-page",
-  thumbnail: designBox,
-  },
+  
 ];
