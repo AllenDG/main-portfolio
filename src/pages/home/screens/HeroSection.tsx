@@ -1,145 +1,32 @@
-// src/components/sections/HeroSection.tsx
-"use client";
-import React from "react";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useSpring,
-  MotionValue,
-} from "framer-motion";
-import { LatestWorkItems } from "@/components/data/LatestWork";
-import TypeWriterTitle from "@/pages/home/components/TypeWriter";
+import { ThreeDCardDemo } from "../components/ThreeDCardDemo";
+import TypeWriter from "../components/TypeWriter";
 
-
-
-export const HeroSection = () => {
-  const firstRow = LatestWorkItems.slice(0, 5);
-  const secondRow = LatestWorkItems.slice(5, 10);
-  const thirdRow = LatestWorkItems.slice(10, 15);
-  const ref = React.useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-
-  const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
-
-  const translateX = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, 1000]),
-    springConfig
-  );
-  const translateXReverse = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, -1000]),
-    springConfig
-  );
-  const rotateX = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [15, 0]),
-    springConfig
-  );
-  const opacity = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [0.2, 1]),
-    springConfig
-  );
-  const rotateZ = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [20, 0]),
-    springConfig
-  );
-  const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
-    springConfig
-  );
-
+export default function HeroSection() {
   return (
-    <div
-      ref={ref}
-      className="h-[200vh] py-40 overflow-hidden antialiased relative flex flex-col [perspective:1000px] [transform-style:preserve-3d]"
-    >
-      <Header />
-      <motion.div
-        style={{ rotateX, rotateZ, translateY, opacity }}
-        className=""
-      >
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
-          {firstRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-        <motion.div className="flex flex-row mb-20 space-x-20">
-          {secondRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateXReverse}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20">
-          {thirdRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-      </motion.div>
-    </div>
-  );
-};
+    <section className="w-full min-h-screen flex flex-col lg:flex-row items-center justify-between gap-12 px-4 py-20 from-background to-muted">
+      {/* Left Side - Text */}
+      <div className="flex-1 max-w-3xl space-y-6 text-left">
+        <p className="text-sm uppercase tracking-widest text-muted-foreground">
+          Welcome to my journey
+        </p>
 
-export const Header = () => {
-  return (
-   <div className="max-w-7xl  py-20 md:py-40 px-4">
-  <h1 className="text-2xl md:text-7xl font-bold text-foreground">
-    Welcome to my Journey
-    <br />
-    <TypeWriterTitle className="text-2xl md:text-6xl font-bold" />
-  </h1>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-foreground">
+          Hello, I’m <span className="text-primary">Allen</span> <br />
+          <span className="text-primary">
+            <TypeWriter className="ml-1" />
+          </span>
+        </h1>
 
-  <p className="max-w-2xl  text-base md:text-xl mt-8 text-muted-foreground">
-    A showcase of selected projects I've worked on recently, blending modern
-    UI/UX with clean frontend architecture.
-  </p>
-</div>
-  );
-};
+        <p className="text-base md:text-lg text-muted-foreground max-w-xl">
+          I craft user-first digital experiences that connect design and function.
+          
+        </p>
+      </div>
 
-export const ProductCard = ({
-  product,
-  translate,
-}: {
-  product: {
-    title: string;
-    link: string;
-    thumbnail: string;
-  };
-  translate: MotionValue<number>;
-}) => {
-  return (
-    <motion.div
-      style={{ x: translate }}
-      whileHover={{ y: -20 }}
-      key={product.title}
-      className="group/product h-96 w-[40rem] relative shrink-0"
-    >
-      <a href={product.link} className="block group-hover/product:shadow-2xl">
-        <img
-          src={product.thumbnail}
-          height="600"
-          width="600"
-          className="object-cover absolute h-full w-full inset-0 rounded-sm"
-          alt={product.title}
-        />
-      </a>
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black/50 pointer-events-none rounded-lg"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white text-lg font-medium">
-        {product.title}
-      </h2>
-    </motion.div>
+      {/* Right Side - 3D Card */}
+      <div className="flex-1 flex justify-center">
+        <ThreeDCardDemo />
+      </div>
+    </section>
   );
-};
+}
