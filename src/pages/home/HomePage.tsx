@@ -1,6 +1,7 @@
-import { HeroSection } from "@/pages/home/screens/HeroSection";
+
 import { CoverDemo } from "@/pages/home/components/CoverDemo";
 import ExperienceSection from "@/pages/home/screens/ExperienceSection";
+import HeroSection from "./screens/HeroSection";
 
 export default function HomePage() {
   return (

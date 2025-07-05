@@ -10,7 +10,7 @@ export default function TypeWriterTitle({ className = "" }: TypeWriterTitleProps
     <span className={`inline-block text-primary dark:text-white ${className}`}>
       <Typewriter
         options={{
-          strings: ["Web Designer", "UI/UX Specialist", "Frontend Developer"],
+          strings: ["Web Designer", "UI/UX", "Frontend Developer"],
           autoStart: true,
           loop: true,
           delay: 75,
