@@ -1,11 +1,12 @@
 import { cn } from "@/lib/utils";
 import { ThreeDCardDemo } from "../components/ThreeDCardDemo";
 import TypeWriter from "../components/TypeWriter";
+import KnowMoreButton from "../components/Buttons";
+import CvButton from "../components/CvButton";
 
 export default function HeroSection() {
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center py-16 px-4 sm:px-8 md:px-12 lg:px-24 xl:px-32 overflow-hidden bg-[#f3f3f3] dark:bg-neutral-900">
-
       {/* Dot Grid Background */}
       <div
         className={cn(
@@ -20,7 +21,6 @@ export default function HeroSection() {
 
       {/* Content Wrapper */}
       <div className="relative z-20 w-full max-w-7xl flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
-        
         {/* Left Side - Text */}
         <div className="flex-1 space-y-8 text-center lg:text-left">
           <p className="text-sm sm:text-base uppercase tracking-[0.25em] text-muted-foreground">
@@ -36,9 +36,16 @@ export default function HeroSection() {
           </h1>
 
           <p className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0">
-            I craft user-first digital experiences that seamlessly blend design and functionality.
-            Whether you're hiring, exploring, or just curious — I'm glad you're here.
+            I craft user-first digital experiences that seamlessly blend design
+            and functionality. Whether you're hiring, exploring, or just curious
+            — I'm glad you're here.
           </p>
+
+          {/* Buttons */}
+          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <CvButton />
+            <KnowMoreButton />
+          </div>
         </div>
 
         {/* Right Side - 3D Card */}
