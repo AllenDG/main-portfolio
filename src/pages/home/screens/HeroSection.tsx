@@ -20,7 +20,7 @@ export default function HeroSection() {
       <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-[#f3f3f3] [mask-image:radial-gradient(ellipse_at_center,transparent_25%,black)] dark:bg-neutral-900" />
 
       {/* Content Wrapper */}
-      <div className="relative z-20 w-full max-w-7xl flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
+      <div className="relative z-20 w-full max-w-7xl flex flex-col-reverse lg:flex-row items-center justify-between gap-12 mb-12">
         {/* Left Side - Text */}
         <div className="flex-1 space-y-8 text-center lg:text-left">
           <p className="text-sm sm:text-base uppercase tracking-[0.25em] text-muted-foreground">
