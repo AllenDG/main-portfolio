@@ -1,6 +1,6 @@
-import Accordion from "../components/Accordion";
-import Designer from "../components/Designer";
-import Developer from "../components/Developer";
+import Accordion from "@/pages/about-me/components/Accordion";
+import Designer from "@/pages/about-me/components/Designer";
+import Developer from "@/pages/about-me/components/Developer";
 
 export default function ProcessSection() {
   return (

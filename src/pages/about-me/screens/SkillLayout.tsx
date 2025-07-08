@@ -1,5 +1,6 @@
-import TechStack from "../components/TechStack";
-import Tools from "../components/Tools";
+
+import TechStack from "@/pages/about-me/components/Techstack";
+import Tools from "@/pages/about-me/components/Tools";
 
 
 export default function SkillLayout() {
