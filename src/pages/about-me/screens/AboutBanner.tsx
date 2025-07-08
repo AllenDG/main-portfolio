@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Socials from "../components/Socials";
+import Socials from "@/pages/about-me/components/Socials";
 
 export default function AboutBanner() {
   return (
