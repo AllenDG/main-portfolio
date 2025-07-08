@@ -19,6 +19,7 @@ type Project = {
 };
 
 const projects: Project[] = [
+  // Your project entries
   {
     title: "Task Manager App",
     description:
@@ -31,8 +32,8 @@ const projects: Project[] = [
     story:
       "This project helped me understand how to architect real-time applications. I collaborated with a team, practiced Git workflows, and prioritized user experience by conducting testing with peers.",
   },
-
-  {
+  
+    {
     title: "Task Manager App",
     description:
       "A full-featured task management application built with React and Firebase.",
@@ -45,7 +46,7 @@ const projects: Project[] = [
       "This project helped me understand how to architect real-time applications. I collaborated with a team, practiced Git workflows, and prioritized user experience by conducting testing with peers.",
   },
 
-  {
+    {
     title: "Task Manager App",
     description:
       "A full-featured task management application built with React and Firebase.",
@@ -58,7 +59,7 @@ const projects: Project[] = [
       "This project helped me understand how to architect real-time applications. I collaborated with a team, practiced Git workflows, and prioritized user experience by conducting testing with peers.",
   },
 
-  {
+    {
     title: "Task Manager App",
     description:
       "A full-featured task management application built with React and Firebase.",
@@ -71,7 +72,7 @@ const projects: Project[] = [
       "This project helped me understand how to architect real-time applications. I collaborated with a team, practiced Git workflows, and prioritized user experience by conducting testing with peers.",
   },
 
-  {
+    {
     title: "Task Manager App",
     description:
       "A full-featured task management application built with React and Firebase.",
@@ -84,7 +85,7 @@ const projects: Project[] = [
       "This project helped me understand how to architect real-time applications. I collaborated with a team, practiced Git workflows, and prioritized user experience by conducting testing with peers.",
   },
 
-  {
+    {
     title: "Task Manager App",
     description:
       "A full-featured task management application built with React and Firebase.",
@@ -103,12 +104,12 @@ export default function CardView() {
 
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-x-44 gap-y-55 py-22">
+      <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-1 mt-12 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-42">
         {projects.map((project, idx) => (
           <PinContainer key={idx} title={project.title} href={project.live}>
-            <div className="flex flex-col gap-4 w-[25em] bg-background rounded-xl p-4">
+            <div className="flex flex-col w-full max-w-md bg-background rounded-xl p-4 shadow-md">
               {/* Image */}
-              <div className="w-full h-50 overflow-hidden rounded-lg">
+              <div className="w-full h-48 overflow-hidden rounded-lg">
                 <a href={project.live} target="_blank" rel="noreferrer">
                   <img
                     src={project.image}
@@ -119,7 +120,7 @@ export default function CardView() {
               </div>
 
               {/* Title & Tag */}
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between mt-4">
                 <h3 className="text-xl font-semibold text-foreground truncate">
                   {project.title}
                 </h3>
@@ -127,12 +128,12 @@ export default function CardView() {
               </div>
 
               {/* Description */}
-              <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
+              <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3 mt-2">
                 {project.description}
               </p>
 
               {/* Links */}
-              <div className="flex items-center gap-3 mt-2">
+              <div className="flex items-center gap-3 mt-3">
                 <a href={project.github} target="_blank" rel="noreferrer">
                   <Github className="w-5 h-5 text-foreground hover:text-cyan-500 transition" />
                 </a>
@@ -165,7 +166,7 @@ export default function CardView() {
           description={selectedProject.description}
           techStack={selectedProject.techStack}
           story={selectedProject.story}
-          image={selectedProject.image} // This should be the imported image directly
+          image={selectedProject.image}
         />
       )}
     </>
