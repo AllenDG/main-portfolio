@@ -4,7 +4,7 @@ import Developer from "@/pages/about-me/components/Developer";
 
 export default function ProcessSection() {
   return (
-    <section className="w-full max-w-5xl mx-auto px-6 py-20 space-y-10">
+    <section className="w-full max-w-7xl mx-auto px-6 py-20 space-y-10">
       <div className="text-center space-y-3">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground">
           How I Turn Ideas Into Meaningful Digital Experiences
