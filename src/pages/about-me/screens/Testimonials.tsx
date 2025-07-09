@@ -3,6 +3,7 @@
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import JedImage from "@/assets/images/jedyne.jpg"; // Local image
 import dave from "@/assets/images/45230660.jpg"; 
+import shania from "@/assets/images/shania.jpg"
 
 const testimonials = [
   {
@@ -19,7 +20,7 @@ const testimonials = [
     name: "Shania Mae Tan",
     designation: "Compliance and Internal Control Analyst",
     company: " Global Catering Services Corp",
-    src: "",
+    src: shania,
   },
   {
     quote:

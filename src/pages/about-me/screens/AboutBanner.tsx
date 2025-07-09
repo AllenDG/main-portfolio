@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Socials from "@/pages/about-me/components/Socials";
+import allen from "@/assets/images/allen.png"
 
 export default function AboutBanner() {
   return (
@@ -14,9 +15,9 @@ export default function AboutBanner() {
         >
           <div className="rounded-3xl overflow-hidden shadow-xl ring-1 ring-border">
             <img
-              src="https://placehold.co/400x500?text=Your+Image"
+              src={allen}
               alt="Allen Profile"
-              className="w-full h-[500px] object-cover"
+              className="w-full h-[700px] object-cover"
             />
           </div>
         </motion.div>

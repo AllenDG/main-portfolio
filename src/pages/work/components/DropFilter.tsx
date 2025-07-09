@@ -1,5 +1,4 @@
 "use client";
-
 import {
   Select,
   SelectContent,
@@ -7,14 +6,19 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useState } from "react";
 
-export default function DropFilter() {
-  const [category, setCategory] = useState("all");
+type Props = {
+  category: "all" | "uiux" | "webdev";
+  setCategory: (val: "all" | "uiux" | "webdev") => void;
+};
 
+export default function DropFilter({ category, setCategory }: Props) {
   return (
     <div className="w-full sm:w-48">
-      <Select value={category} onValueChange={setCategory}>
+      <Select
+        value={category}
+        onValueChange={(val) => setCategory(val as never)}
+      >
         <SelectTrigger className="w-full">
           <SelectValue placeholder="Filter by" />
         </SelectTrigger>

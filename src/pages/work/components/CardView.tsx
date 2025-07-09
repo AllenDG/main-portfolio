@@ -1,113 +1,26 @@
 "use client";
+
 import { useState } from "react";
 import { PinContainer } from "@/components/ui/3d-pin";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Github, ExternalLink } from "lucide-react";
-import Dormitory from "@/assets/images/Dormitory.jpg";
 import ViewModal from "./ViewModal";
+import type { Project } from "@/types/projects";
 
-type Project = {
-  title: string;
-  description: string;
-  github: string;
-  live: string;
-  tag: string;
-  image: string;
-  techStack: string[];
-  story: string;
+type Props = {
+  projects: Project[];
 };
 
-const projects: Project[] = [
-  // Your project entries
-  {
-    title: "Task Manager App",
-    description:
-      "A full-featured task management application built with React and Firebase.",
-    github: "https://github.com/username/task-manager",
-    live: "https://taskpro.vercel.app",
-    tag: "Development",
-    image: Dormitory,
-    techStack: ["React", "Firebase", "Tailwind CSS"],
-    story:
-      "This project helped me understand how to architect real-time applications. I collaborated with a team, practiced Git workflows, and prioritized user experience by conducting testing with peers.",
-  },
-  
-    {
-    title: "Task Manager App",
-    description:
-      "A full-featured task management application built with React and Firebase.",
-    github: "https://github.com/username/task-manager",
-    live: "https://taskpro.vercel.app",
-    tag: "Development",
-    image: Dormitory,
-    techStack: ["React", "Firebase", "Tailwind CSS"],
-    story:
-      "This project helped me understand how to architect real-time applications. I collaborated with a team, practiced Git workflows, and prioritized user experience by conducting testing with peers.",
-  },
-
-    {
-    title: "Task Manager App",
-    description:
-      "A full-featured task management application built with React and Firebase.",
-    github: "https://github.com/username/task-manager",
-    live: "https://taskpro.vercel.app",
-    tag: "Development",
-    image: Dormitory,
-    techStack: ["React", "Firebase", "Tailwind CSS"],
-    story:
-      "This project helped me understand how to architect real-time applications. I collaborated with a team, practiced Git workflows, and prioritized user experience by conducting testing with peers.",
-  },
-
-    {
-    title: "Task Manager App",
-    description:
-      "A full-featured task management application built with React and Firebase.",
-    github: "https://github.com/username/task-manager",
-    live: "https://taskpro.vercel.app",
-    tag: "Development",
-    image: Dormitory,
-    techStack: ["React", "Firebase", "Tailwind CSS"],
-    story:
-      "This project helped me understand how to architect real-time applications. I collaborated with a team, practiced Git workflows, and prioritized user experience by conducting testing with peers.",
-  },
-
-    {
-    title: "Task Manager App",
-    description:
-      "A full-featured task management application built with React and Firebase.",
-    github: "https://github.com/username/task-manager",
-    live: "https://taskpro.vercel.app",
-    tag: "Development",
-    image: Dormitory,
-    techStack: ["React", "Firebase", "Tailwind CSS"],
-    story:
-      "This project helped me understand how to architect real-time applications. I collaborated with a team, practiced Git workflows, and prioritized user experience by conducting testing with peers.",
-  },
-
-    {
-    title: "Task Manager App",
-    description:
-      "A full-featured task management application built with React and Firebase.",
-    github: "https://github.com/username/task-manager",
-    live: "https://taskpro.vercel.app",
-    tag: "Development",
-    image: Dormitory,
-    techStack: ["React", "Firebase", "Tailwind CSS"],
-    story:
-      "This project helped me understand how to architect real-time applications. I collaborated with a team, practiced Git workflows, and prioritized user experience by conducting testing with peers.",
-  },
-];
-
-export default function CardView() {
+export default function CardView({ projects }: Props) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
     <>
-      <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-1 mt-12 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-42">
+      <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-42">
         {projects.map((project, idx) => (
           <PinContainer key={idx} title={project.title} href={project.live}>
-            <div className="flex flex-col w-full max-w-md bg-background rounded-xl p-4 shadow-md">
+            <div className="flex flex-col w-[300px] bg-background rounded-xl p-4 shadow-md">
               {/* Image */}
               <div className="w-full h-48 overflow-hidden rounded-lg">
                 <a href={project.live} target="_blank" rel="noreferrer">
