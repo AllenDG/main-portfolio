@@ -5,22 +5,22 @@ const socials = [
   {
     name: "LinkedIn",
     icon: <Linkedin className="w-5 h-5" />,
-    link: "https://www.linkedin.com/in/your-profile",
+    link: "https://www.linkedin.com/in/allenwalterdg/",
   },
   {
     name: "GitHub",
     icon: <Github className="w-5 h-5" />,
-    link: "https://github.com/your-username",
+    link: "https://github.com/AllenDG",
   },
   {
     name: "Instagram",
     icon: <Instagram className="w-5 h-5" />,
-    link: "https://instagram.com/your-profile",
+    link: "https://www.instagram.com/pickaro_/",
   },
   {
     name: "Facebook",
     icon: <Facebook className="w-5 h-5" />,
-    link: "https://facebook.com/your-profile",
+    link: "https://www.facebook.com/AllenWalterDG/",
   },
 ];
 
@@ -42,7 +42,6 @@ export default function Socials() {
           <span className="text-sm font-medium text-foreground">
             {social.name}
           </span>
-          
         </motion.a>
       ))}
     </div>
