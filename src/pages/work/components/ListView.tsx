@@ -76,7 +76,7 @@ export default function ListView({ projects }: Props) {
               asChild
             >
               <a href={project.live} target="_blank" rel="noopener noreferrer">
-                Visit Project
+                Case Study
               </a>
             </Button>
           </div>
