@@ -1,5 +1,5 @@
 "use client";
-import { Github, ExternalLink } from "lucide-react";
+
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -31,18 +31,11 @@ export default function ListView({ projects }: Props) {
                   : "Frontend Developer"}
               </p>
             </div>
-            <div className="flex gap-3">
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github className="w-5 h-5 text-muted-foreground hover:text-cyan-500 transition" />
-              </a>
-              <a href={project.live} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="w-5 h-5 text-muted-foreground hover:text-cyan-500 transition" />
-              </a>
-            </div>
+            {/* Disabled external links */}
+            {/* <div className="flex gap-3">
+              <Github className="w-5 h-5 text-muted-foreground" />
+              <ExternalLink className="w-5 h-5 text-muted-foreground" />
+            </div> */}
           </div>
 
           <p className="text-base text-muted-foreground mb-5">
@@ -70,14 +63,8 @@ export default function ListView({ projects }: Props) {
           )}
 
           <div className="mt-6">
-            <Button
-              variant="secondary"
-              className="hover:scale-[1.02] transition-transform"
-              asChild
-            >
-              <a href={project.live} target="_blank" rel="noopener noreferrer">
-                Case Study
-              </a>
+            <Button variant="secondary" disabled className="w-full">
+              Case Study
             </Button>
           </div>
         </motion.div>
