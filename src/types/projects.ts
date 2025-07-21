@@ -22,19 +22,19 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Gym Management System",
+    title: "Drive Ease",
     description:
-      "A comprehensive gym management solution with admin and user panels, designed to handle attendance tracking, payment records, and visit histories seamlessly.",
-    github: "https://github.com/username/gym-management",
-    live: "https://www.figma.com/proto/F82xlMF1CLLHogq0lO9VjS/GYM-MANAGEMENT?page-id=0%3A1&node-id=2-64&p=f&viewport=220%2C176%2C0.15&t=bdaZKmr7F2CsSyvB-1&scaling=contain&content-scaling=fixed",
+      "A modern appointment system for car rental bookings with features like real-time availability, vehicle filtering, and booking history.",
+    github: "https://github.com/username/driveease",
+    live: "https://www.figma.com/proto/D4eiNYldpg84uombuP1ZgU/Untitled?page-id=0%3A1&node-id=30-2365&p=f&viewport=342%2C232%2C0.17&t=zSYHyMj4uAVAJt5o-1&scaling=contain&content-scaling=fixed",
     tag: "Mockup",
-    image: progress,
-    techStack: ["Low fed Mockup, Figma"],
-    impact:
-      "Simplified daily gym operations for both staff and members, resulting in improved attendance accuracy and real-time financial reporting.",
+    image: drive,
+    techStack: ["Figma, Fully Designed"],
     story:
-      "We developed this fully functional system for a real-world gym client. The admin dashboard allows for complete control over member logs, payments, and history tracking. Meanwhile, gym members can log in daily to check in, view their visit history, and stay informed. The solution is optimized for reliability and scalability, and it’s currently deployed and in active use.",
-    role: "uiux", // aligns with your DropFilter
+      "Developed an intuitive web platform allowing customers to schedule car rentals based on availability. Integrated calendar views, search filters, and booking history. The interface is optimized for mobile and desktop.",
+    impact:
+      "Boosted rental workflow efficiency and provided customers with a smooth appointment experience.",
+    role: "uiux",
   },
 
   {
@@ -50,22 +50,6 @@ export const projects: Project[] = [
       "Built a powerful system enabling users to book multiple appointments at once, manage appointment queues, and maintain a clean appointment history. The cart-like feature makes bulk bookings seamless for end users and admins.",
     impact:
       "Improved appointment scheduling speed for enterprises by over 40% and reduced manual entry overhead.",
-    role: "uiux",
-  },
-
-  {
-    title: "Drive Ease – Car Rental Scheduler",
-    description:
-      "A modern appointment system for car rental bookings with features like real-time availability, vehicle filtering, and booking history.",
-    github: "https://github.com/username/driveease",
-    live: "https://www.figma.com/proto/D4eiNYldpg84uombuP1ZgU/Untitled?page-id=0%3A1&node-id=30-2365&p=f&viewport=342%2C232%2C0.17&t=zSYHyMj4uAVAJt5o-1&scaling=contain&content-scaling=fixed",
-    tag: "Mockup",
-    image: drive,
-    techStack: ["Figma, Fully Designed"],
-    story:
-      "Developed an intuitive web platform allowing customers to schedule car rentals based on availability. Integrated calendar views, search filters, and booking history. The interface is optimized for mobile and desktop.",
-    impact:
-      "Boosted rental workflow efficiency and provided customers with a smooth appointment experience.",
     role: "uiux",
   },
 
@@ -103,22 +87,6 @@ export const projects: Project[] = [
   },
 
   {
-    title: "Photo Studio Website",
-    description:
-      "A responsive promotional website for a local photo studio business featuring gallery sections, services, and contact forms.",
-    github: "https://github.com/AllenDG/Photo-Studio",
-    live: "https://photostudio-website.netlify.app/",
-    tag: "Web Dev",
-    image: photo,
-    techStack: ["HTML", "CSS", "JavaScript"],
-    story:
-      "This static site project focused on performance, aesthetic balance, and SEO fundamentals. Designed for easy updates by non-tech clients.",
-    impact:
-      "Enabled the client to showcase their portfolio and services online, improving customer inquiries by 60%.",
-    role: "webdev",
-  },
-
-  {
     title: "Dormitory ",
     description:
       "An apartment and dorm listing platform that allows students and professionals to browse, search, and inquire about rental listings.",
@@ -131,6 +99,22 @@ export const projects: Project[] = [
       "This project was aimed at solving student housing visibility. It features card listings, filtering by price/location, and property inquiries.",
     impact:
       "Helped students and tenants quickly discover nearby dorms and improved listing visibility for property owners.",
+    role: "webdev",
+  },
+
+  {
+    title: "Photo Studio Website",
+    description:
+      "A responsive promotional website for a local photo studio business featuring gallery sections, services, and contact forms.",
+    github: "https://github.com/AllenDG/Photo-Studio",
+    live: "https://photostudio-website.netlify.app/",
+    tag: "Web Dev",
+    image: photo,
+    techStack: ["HTML", "CSS", "JavaScript"],
+    story:
+      "This static site project focused on performance, aesthetic balance, and SEO fundamentals. Designed for easy updates by non-tech clients.",
+    impact:
+      "Enabled the client to showcase their portfolio and services online, improving customer inquiries by 60%.",
     role: "webdev",
   },
 
