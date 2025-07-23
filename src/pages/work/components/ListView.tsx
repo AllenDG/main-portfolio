@@ -11,7 +11,7 @@ type Props = {
 
 export default function ListView({ projects }: Props) {
   return (
-    <div className="max-w-8xl mx-auto px-6 sm:px-8 md:px-10 py-14 flex flex-col gap-14">
+    <div className="max-w-8xl mx-auto px-4  py-14 flex flex-col gap-14">
       {projects.map((project, index) => (
         <motion.div
           key={index}
