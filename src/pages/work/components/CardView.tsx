@@ -2,7 +2,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-// import { Github, ExternalLink } from "lucide-react"; // Removed icons to disable actions
+import { useNavigate } from "react-router-dom";
 
 import type { Project } from "@/types/projects";
 
@@ -10,7 +10,30 @@ type Props = {
   projects: Project[];
 };
 
+// Helper function to create URL-friendly slug
+const createSlug = (title: string): string => {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9 -]/g, '') // Remove special characters
+    .replace(/\s+/g, '-') // Replace spaces with hyphens
+    .replace(/-+/g, '-') // Replace multiple hyphens with single hyphen
+    .trim();
+};
+
 export default function CardView({ projects }: Props) {
+  const navigate = useNavigate();
+
+  const handleViewProject = (project: Project, index: number) => {
+    const slug = createSlug(project.title);
+    // Navigate with both slug and index for reliability
+    navigate(`/projects/${slug}`, { 
+      state: { 
+        project, 
+        projectIndex: index 
+      } 
+    });
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-4 pt-20 pb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {projects.map((project, idx) => (
@@ -40,16 +63,14 @@ export default function CardView({ projects }: Props) {
             {project.description}
           </p>
 
-          {/* Links Disabled */}
-          {/* <div className="flex items-center gap-3 mt-3">
-            <Github className="w-5 h-5 text-muted-foreground" />
-            <ExternalLink className="w-5 h-5 text-muted-foreground" />
-          </div> */}
-
-          {/* CTA Button Disabled */}
+          {/* CTA Button - Now Enabled */}
           <div className="mt-4">
-            <Button variant="secondary" className="w-full" disabled>
-              Case Study
+            <Button 
+              variant="secondary" 
+              className="w-full"
+              onClick={() => handleViewProject(project, idx)}
+            >
+              View Project
             </Button>
           </div>
         </div>

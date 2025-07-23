@@ -5,11 +5,12 @@ import { createBrowserRouter } from "react-router-dom";
 import HomeLayout from "@/components/layouts/HomeLayout";
 
 // Pages
-// This will be your one-pager
 import AboutPage from "@/pages/about-me/AboutMePage";
 import BlogPage from "@/pages/blog/BlogPage";
 import NotFound from "@/pages/NotFound";
 import MainPage from "@/pages/MainPage";
+import CaseStudy from "@/pages/case-study/CaseStudy";
+
 
 export const MainRoutes = createBrowserRouter([
   {
@@ -23,6 +24,7 @@ export const MainRoutes = createBrowserRouter([
       { path: "/", element: <MainPage /> }, // One-pager with Home, Work, Contact
       { path: "about", element: <AboutPage /> },
       { path: "blog", element: <BlogPage /> },
+      { path: "projects/:slug", element: <CaseStudy /> }, // New project route
     ],
   },
 ]);
