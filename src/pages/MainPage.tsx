@@ -8,9 +8,11 @@ export default function MainPage() {
       <div>
         <HomePage />
       </div>
+
       <div>
         <WorkPage />
       </div>
+
       <div>
         <ContactPage />
       </div>
