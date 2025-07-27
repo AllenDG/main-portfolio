@@ -9,45 +9,50 @@ import {
   Users,
 } from "lucide-react";
 import type { Project } from "@/types/projects";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
+import { contributorsData } from "@/types/avatar";
+import { AnimatedAvatarTooltip} from "@/components/ui/animated-tooltip";
 
 export default function ProjectStory({ project }: { project: Project }) {
-  const contributors = project.contributors || [];
+
   const featureImages = project.featureImages || [];
+
+  // Filter screenshots by different user types
+  const publicScreenshots = featureImages.filter((img) => {
+    const label = img.label.toLowerCase();
+    return (
+      label.startsWith("user-") &&
+      !label.includes("user portal") &&
+      !label.includes("admin")
+    );
+  });
+
+  const userPortalScreenshots = featureImages.filter((img) => {
+    const label = img.label.toLowerCase();
+    return label.includes("user portal");
+  });
+
+  const adminScreenshots = featureImages.filter((img) => {
+    const label = img.label.toLowerCase();
+    return label.startsWith("admin");
+  });
 
   return (
     <div className="w-full">
       <div className="bg-card p-8 rounded-sm shadow-sm border space-y-8">
         {/* Contributors */}
-        {contributors.length > 0 && (
-          <div className="mb-6">
-            <h3 className="text-xl font-semibold text-foreground mb-2 flex items-center gap-2">
-              <Users className="w-5 h-5 text-primary" /> Contributors
-            </h3>
-            <div className="flex gap-4">
-              {contributors.map((contributor, index) => (
-                <div key={index} className="group relative">
-                  <Avatar>
-                    <AvatarImage
-                      src={contributor.avatar}
-                      alt={contributor.name}
-                    />
-                    <AvatarFallback>
-                      {contributor.name.slice(0, 2).toUpperCase()}
-                    </AvatarFallback>
-                  </Avatar>
-                  <span className="absolute bottom-[-28px] left-1/2 -translate-x-1/2 bg-muted text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition text-center whitespace-nowrap">
-                    {contributor.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+       {contributorsData.length > 0 && (
+  <div className="mb-6">
+    <h3 className="text-xl font-semibold text-foreground mb-2 flex items-center gap-2">
+      <Users className="w-5 h-5 text-primary" /> Contributors
+    </h3>
+    <AnimatedAvatarTooltip items={contributorsData} />
+  </div>
+)}
 
         {/* Story */}
         <div>
-          <h2 className="text-2xl font-bold text-foreground mb-2 flex items-center gap-2">
+          <h2 className="text-xl font-semibold text-foreground mb-2 flex items-center gap-2">
             <ClipboardList className="w-5 h-5 text-primary" /> Project Story
           </h2>
           <p className="text-muted-foreground leading-relaxed">
@@ -117,26 +122,79 @@ export default function ProjectStory({ project }: { project: Project }) {
           </div>
         )}
 
-        {/* Feature Images */}
-        {featureImages.length > 0 && (
+        {/* Screenshots Section with Support for Three User Types */}
+        {(publicScreenshots.length > 0 ||
+          userPortalScreenshots.length > 0 ||
+          adminScreenshots.length > 0) && (
           <div className="border-t pt-6">
-            <h3 className="text-xl font-semibold text-foreground mb-2 flex items-center gap-2">
-              <Zap className="w-5 h-5 text-primary" /> Feature Screenshots
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {featureImages.map((item, idx) => (
-                <div key={idx} className="border rounded overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={item.label}
-                    className="w-full object-cover"
-                  />
-                  <div className="text-sm px-2 py-1 text-muted-foreground bg-muted">
-                    {item.label}
-                  </div>
+            {/* Public/User Screens */}
+            {publicScreenshots.length > 0 && (
+              <div className="mb-6">
+                <h4 className="text-lg font-medium text-foreground mb-4">
+                  Public Website Screens
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                  {publicScreenshots.map((item, idx) => (
+                    <div key={idx} className="border rounded overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={item.label}
+                        className="w-full object-cover"
+                      />
+                      <div className="text-sm px-2 py-1 text-muted-foreground bg-muted">
+                        {item.label}
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            )}
+
+            {/* User Portal Screens */}
+            {userPortalScreenshots.length > 0 && (
+              <div className="mb-6">
+                <h4 className="text-lg font-medium text-foreground mb-4">
+                  User Portal Screens
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                  {userPortalScreenshots.map((item, idx) => (
+                    <div key={idx} className="border rounded overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={item.label}
+                        className="w-full object-cover"
+                      />
+                      <div className="text-sm px-2 py-1 text-muted-foreground bg-muted">
+                        {item.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Admin Screens */}
+            {adminScreenshots.length > 0 && (
+              <div>
+                <h4 className="text-lg font-medium text-foreground mb-4">
+                  Admin Dashboard Screens
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                  {adminScreenshots.map((item, idx) => (
+                    <div key={idx} className="border rounded overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={item.label}
+                        className="w-full object-cover"
+                      />
+                      <div className="text-sm px-2 py-1 text-muted-foreground bg-muted">
+                        {item.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         )}
 
