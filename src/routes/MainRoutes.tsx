@@ -21,10 +21,10 @@ export const MainRoutes = createBrowserRouter([
     path: "/",
     element: <HomeLayout />,
     children: [
-      { path: "/", element: <MainPage /> }, // One-pager with Home, Work, Contact
+      { path: "/", element: <MainPage /> }, 
       { path: "about", element: <AboutPage /> },
       { path: "blog", element: <BlogPage /> },
-      { path: "projects/:slug", element: <CaseStudy /> }, // New project route
+      { path: "projects/:slug", element: <CaseStudy /> },
     ],
   },
 ]);
