@@ -1,5 +1,3 @@
-// components/ui/AnimatedAvatarTooltip.tsx
-
 "use client";
 
 import React, { useState, useRef } from "react";
@@ -9,18 +7,17 @@ import {
   useTransform,
   useSpring,
   AnimatePresence,
-} from "motion/react";
+} from "framer-motion";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 type Contributor = {
-  id: number;
   name: string;
-  designation: string; // changed from role to match original type
-  image: string; // changed from avatar
+  avatar: string;
+  designation?: string;
 };
 
 export function AnimatedAvatarTooltip({ items }: { items: Contributor[] }) {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredName, setHoveredName] = useState<string | null>(null);
   const x = useMotionValue(0);
   const animationFrameRef = useRef<number | null>(null);
   const springConfig = { stiffness: 100, damping: 15 };
@@ -47,13 +44,13 @@ export function AnimatedAvatarTooltip({ items }: { items: Contributor[] }) {
     <div className="flex gap-4">
       {items.map((item) => (
         <div
-          key={item.id}
+          key={item.name}
           className="group relative"
-          onMouseEnter={() => setHoveredIndex(item.id)}
-          onMouseLeave={() => setHoveredIndex(null)}
+          onMouseEnter={() => setHoveredName(item.name)}
+          onMouseLeave={() => setHoveredName(null)}
         >
           <AnimatePresence>
-            {hoveredIndex === item.id && (
+            {hoveredName === item.name && (
               <motion.div
                 initial={{ opacity: 0, y: 20, scale: 0.6 }}
                 animate={{
@@ -83,14 +80,20 @@ export function AnimatedAvatarTooltip({ items }: { items: Contributor[] }) {
             )}
           </AnimatePresence>
 
-          <Avatar className="h-14 w-14 group-hover:z-30 group-hover:scale-105 transition duration-500">
+          <Avatar className="h-14 w-14 group-hover:z-30 group-hover:scale-105 transition duration-500 overflow-hidden">
             <AvatarImage
-              src={item.image}
+              src={item.avatar}
               alt={item.name}
+              className="object-cover w-full h-full"
               onMouseMove={handleMouseMove}
             />
             <AvatarFallback>
-              {item.name.slice(0, 2).toUpperCase()}
+              {item.name
+                .split(" ")
+                .map((part) => part[0])
+                .join("")
+                .slice(0, 2)
+                .toUpperCase()}
             </AvatarFallback>
           </Avatar>
         </div>

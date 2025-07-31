@@ -1,4 +1,3 @@
-// components/ProjectStory.tsx
 import {
   CheckCircle,
   Target,
@@ -9,12 +8,9 @@ import {
   Users,
 } from "lucide-react";
 import type { Project } from "@/types/projects";
-
-import { contributorsData } from "@/types/avatar";
-import { AnimatedAvatarTooltip} from "@/components/ui/animated-tooltip";
+import { AnimatedAvatarTooltip } from "@/components/ui/animated-tooltip";
 
 export default function ProjectStory({ project }: { project: Project }) {
-
   const featureImages = project.featureImages || [];
 
   // Filter screenshots by different user types
@@ -41,23 +37,21 @@ export default function ProjectStory({ project }: { project: Project }) {
     <div className="w-full">
       <div className="bg-card p-8 rounded-sm shadow-sm border space-y-8">
         {/* Contributors */}
-       {contributorsData.length > 0 && (
-  <div className="mb-6">
-    <h3 className="text-xl font-semibold text-foreground mb-2 flex items-center gap-2">
-      <Users className="w-5 h-5 text-primary" /> Contributors
-    </h3>
-    <AnimatedAvatarTooltip items={contributorsData} />
-  </div>
-)}
+        {project.contributors && project.contributors.length > 0 && (
+          <div className="mb-6">
+            <h3 className="text-xl font-semibold text-foreground mb-2 flex items-center gap-2">
+              <Users className="w-5 h-5 text-primary" /> Contributors
+            </h3>
+            <AnimatedAvatarTooltip items={project.contributors} />
+          </div>
+        )}
 
         {/* Story */}
         <div>
           <h2 className="text-xl font-semibold text-foreground mb-2 flex items-center gap-2">
             <ClipboardList className="w-5 h-5 text-primary" /> Project Story
           </h2>
-          <p className="text-muted-foreground leading-relaxed">
-            {project.story}
-          </p>
+          <p className="text-muted-foreground leading-relaxed">{project.story}</p>
         </div>
 
         {project.impact && (
@@ -65,9 +59,7 @@ export default function ProjectStory({ project }: { project: Project }) {
             <h3 className="text-xl font-semibold text-foreground mb-2 flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-primary" /> Impact
             </h3>
-            <p className="text-muted-foreground leading-relaxed">
-              {project.impact}
-            </p>
+            <p className="text-muted-foreground leading-relaxed">{project.impact}</p>
           </div>
         )}
 
@@ -76,9 +68,7 @@ export default function ProjectStory({ project }: { project: Project }) {
             <h3 className="text-xl font-semibold text-foreground mb-2 flex items-center gap-2">
               <AlertTriangle className="w-5 h-5 text-primary" /> Challenges
             </h3>
-            <p className="text-muted-foreground leading-relaxed">
-              {project.challenges}
-            </p>
+            <p className="text-muted-foreground leading-relaxed">{project.challenges}</p>
           </div>
         )}
 
@@ -100,8 +90,7 @@ export default function ProjectStory({ project }: { project: Project }) {
         {project.keyResponsibilities && (
           <div className="border-t pt-6">
             <h3 className="text-xl font-semibold text-foreground mb-2 flex items-center gap-2">
-              <ClipboardList className="w-5 h-5 text-primary" /> Key
-              Responsibilities
+              <ClipboardList className="w-5 h-5 text-primary" /> Key Responsibilities
             </h3>
             <p className="text-muted-foreground leading-relaxed">
               {project.keyResponsibilities}
@@ -122,12 +111,11 @@ export default function ProjectStory({ project }: { project: Project }) {
           </div>
         )}
 
-        {/* Screenshots Section with Support for Three User Types */}
+        {/* Screenshots */}
         {(publicScreenshots.length > 0 ||
           userPortalScreenshots.length > 0 ||
           adminScreenshots.length > 0) && (
           <div className="border-t pt-6">
-            {/* Public/User Screens */}
             {publicScreenshots.length > 0 && (
               <div className="mb-6">
                 <h4 className="text-lg font-medium text-foreground mb-4">
@@ -150,7 +138,6 @@ export default function ProjectStory({ project }: { project: Project }) {
               </div>
             )}
 
-            {/* User Portal Screens */}
             {userPortalScreenshots.length > 0 && (
               <div className="mb-6">
                 <h4 className="text-lg font-medium text-foreground mb-4">
@@ -173,7 +160,6 @@ export default function ProjectStory({ project }: { project: Project }) {
               </div>
             )}
 
-            {/* Admin Screens */}
             {adminScreenshots.length > 0 && (
               <div>
                 <h4 className="text-lg font-medium text-foreground mb-4">

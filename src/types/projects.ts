@@ -1,9 +1,6 @@
-// src/data/project.ts
-/*import Dormitory from "@/assets/images/Dormitory.jpg";
-import drive from "@/assets/images/DriveEase.jpg";
-import photo from "@/assets/images/photoStudios.png";*/
+// ─── Image Imports ──────────────────────────────────────────────
 
-//gym
+// Gym Management
 import gym from "@/assets/images/gym-management/gym.png";
 import dashboard from "@/assets/images/gym-management/dashboard.jpg";
 import profileManagement from "@/assets/images/gym-management/profile-management.jpg";
@@ -12,10 +9,8 @@ import systemSettings from "@/assets/images/gym-management/system-settings.jpg";
 import userDashboard from "@/assets/images/gym-management/user-dashboard.png";
 import userLogs from "@/assets/images/gym-management/user-logs.png";
 
-//aignition
+// Aignition Global Education
 import aignitionMain from "@/assets/images/aignition/main.png";
-
-//aignition feature images
 import aignitionLanding from "@/assets/images/aignition/landing-about.png";
 import aignitionSummerCamp from "@/assets/images/aignition/landing-summer-camp.png";
 import aignitionTimeline from "@/assets/images/aignition/landing-timeline.png";
@@ -31,6 +26,21 @@ import programManagement from "@/assets/images/aignition/program-management-dash
 import userManagement from "@/assets/images/aignition/user-management-dashboard.png";
 import userPortalDashboard from "@/assets/images/aignition/user-portal-dashboard.png";
 import userPortalContent from "@/assets/images/aignition/user-portal-content.png";
+import { contributorsData, type ProjectTitle } from "./avatar";
+
+// ─── Utility ────────────────────────────────────────────────────
+
+const getContributors = (title: string) => {
+  return (
+    contributorsData[title as ProjectTitle]?.map((c) => ({
+      name: c.name,
+      avatar: c.image,
+      designation: c.designation,
+    })) ?? []
+  );
+};
+
+// ─── Type Definitions ──────────────────────────────────────────
 
 export type Contributor = {
   name: string;
@@ -62,33 +72,39 @@ export type Project = {
   featureImages?: FeatureImage[];
 };
 
-
+// ─── Project Data ──────────────────────────────────────────────
 
 export const projects: Project[] = [
   {
     title: "Gym Management System",
     description:
-      "A comprehensive gym management platform that streamlines operations through smart technology, featuring automated check-ins, payment tracking, and centralized member management for enhanced operational efficiency.",
+      "A comprehensive gym management platform that streamlines operations through smart technology, transforming traditional manual processes into efficient digital workflows that enhance both administrative efficiency and member experience.",
     github: "https://github.com/AllenDG/gym_frontend",
     live: "https://gym-frontend-lac.vercel.app/login",
     tag: "Development",
     image: gym,
-    techStack: ["ReactJS", "TypeScript", "Tailwind CSS", "Zustand", "Supabase"],
+    techStack: ["ReactJS", "Supabase", "Tailwind CSS", "TypeScript", "Zustand"],
+
     story:
-      "This comprehensive gym management platform was developed to address critical operational inefficiencies faced by a local fitness facility. The client was struggling with manual processes scattered check-in sheets, paper-based payment records, and disorganized member information that consumed valuable time and reduced focus on core business activities. The existing workflow relied heavily on manual administration, creating bottlenecks in daily operations where staff spent excessive time tracking member check-ins, managing payment schedules, and maintaining member records across multiple disconnected systems.",
+      "This comprehensive gym management platform was developed to address critical operational inefficiencies that plagued traditional fitness facilities. The project emerged from observing how manual processes created bottlenecks in member management, payment tracking, and operational reporting. By designing a digital-first solution, I transformed these pain points into streamlined workflows that not only improved day-to-day operations but also provided valuable insights for business growth and decision-making.",
+
     impact:
-      "The implementation delivered significant operational improvements, transforming hours of daily administrative tasks into automated workflows. Staff can now focus on member engagement and service delivery rather than manual data entry. The centralized system provides complete operational visibility, enabling better resource allocation and strategic planning. The platform successfully transformed paper based processes into efficient digital workflows, demonstrating measurable improvements in both operational efficiency and member satisfaction.",
+      "The implementation delivered significant operational improvements across all aspects of gym management. Administrative tasks that previously consumed hours of manual work were automated, allowing staff to focus on member service and facility improvement. The real-time reporting capabilities provided management with actionable insights into membership trends, payment patterns, and facility usage, enabling data-driven decisions that improved both operational efficiency and member satisfaction.",
+
     role: "webdev",
+
     challenges:
-      "The primary challenge was designing a system that could replace deeply ingrained manual processes while serving users with varying levels of technical familiarity. Creating an intuitive interface that staff could adopt quickly was crucial for successful implementation. On the technical side, implementing real-time data synchronization for check-ins and ensuring data accuracy across attendance and payment logs required robust state management and reliable database integration. Security was paramount, particularly around user authentication, admin privileges, and sensitive member information protection.",
+      "The primary challenge was designing a system that could replace deeply ingrained manual processes while ensuring seamless adoption by staff members with varying levels of technical expertise. Additionally, maintaining data integrity during the transition from paper-based records to digital systems required careful planning and implementation. Balancing comprehensive functionality with user-friendly interfaces demanded constant iteration and feedback incorporation to create a solution that was both powerful and intuitive.",
+
     goal: [
-      "Transform manual gym operations into efficient digital workflows by eliminating scattered check-in sheets, paper-based payment records, and disconnected member information systems.",
-      "Provide gym staff with a centralized platform that reduces administrative overhead and allows focus on core business activities like member engagement and service delivery.",
-      "Deliver actionable business insights through comprehensive reporting and data visualization tools that support strategic decision-making and growth planning.",
-      "Create a scalable, maintainable solution built with modern development practices and clean architecture that can adapt to future business needs and expansion.",
+      "Transform manual gym operations into efficient digital workflows that reduce administrative overhead and human error",
+      "Provide gym staff with a centralized platform for managing all aspects of member relationships and facility operations",
+      "Deliver actionable business insights through real-time reporting and analytics capabilities",
+      "Create a scalable, maintainable solution that can adapt to growing business needs and future feature requirements",
     ],
+
     keyResponsibilities:
-      "Led frontend development and UI/UX design of the entire system, creating intuitive user interfaces and seamless user experiences for both admin and member portals. Designed and implemented responsive UI components, developed the complete frontend architecture, connected to Supabase APIs using Zustand for state management, and implemented real-time data handling, user authentication systems, and comprehensive testing protocols to ensure reliable production deployment.",
+      "Led frontend development and UI/UX design of the entire system, taking ownership of the complete user experience from initial wireframes to final implementation. Collaborated closely with gym management to understand operational workflows and translate business requirements into technical specifications. Conducted user research and testing sessions to ensure the platform met real-world usage patterns and successfully facilitated the transition from manual to digital processes.",
 
     features: [
       "Dashboard with real-time operational insights",
@@ -100,169 +116,100 @@ export const projects: Project[] = [
       "Member profile management and activity history",
       "System settings and configuration management",
     ],
+
     takeaways:
-      "This project significantly enhanced my understanding of developing solutions for real-world business challenges while working collaboratively in a team environment. I gained valuable experience in stakeholder communication, requirements gathering, and translating business needs into technical specifications. The collaborative development process improved my skills in code coordination, task delegation, and maintaining consistent design standards across team contributions. The project strengthened my technical abilities in real-time data handling, third-party service integration, and creating user-centric interfaces that prioritize both functionality and accessibility. Most importantly, I learned how thoughtful technology implementation combined with effective teamwork can create measurable business impact and operational transformation.",
-    contributors: [
-      {
-        name: "Allen Walter De Guzman",
-        avatar: "/avatars/allen.png",
-      },
-      {
-        name: "Dave Charm Bulaquenia",
-        avatar: "/avatars/allen.png",
-      },
-    ],
+      "This project significantly enhanced my understanding of developing solutions for real-world business challenges, particularly in environments where technology adoption requires careful change management. I gained valuable experience in stakeholder communication, user research methodologies, and the importance of iterative design in creating truly user-centered solutions. The project deepened my technical skills in building scalable React applications while reinforcing the critical importance of translating business needs into intuitive digital experiences that drive actual operational improvements.",
+
+    contributors: getContributors("Gym Management System"),
+
     featureImages: [
-      {
-        image: gym, 
-        label: "User- Login Page",
-      },
-      {
-        image: userDashboard,
-        label: "User- User Dashboard",
-      },
-      {
-        image: userLogs,
-        label: "User - User Logs",
-      },
-      {
-        image: dashboard,
-        label: "Admin - Dashboard",
-      },
-      {
-        image: profileManagement,
-        label: "Admin - Profile Management",
-      },
-      {
-        image: paymentLogs,
-        label: "Admin - Payment Logs",
-      },
-      {
-        image: systemSettings,
-        label: "Admin - System Settings",
-      },
+      { image: gym, label: "User- Login Page" },
+      { image: userDashboard, label: "User- User Dashboard" },
+      { image: userLogs, label: "User - User Logs" },
+      { image: dashboard, label: "Admin - Dashboard" },
+      { image: profileManagement, label: "Admin - Profile Management" },
+      { image: paymentLogs, label: "Admin - Payment Logs" },
+      { image: systemSettings, label: "Admin - System Settings" },
     ],
   },
 
   {
     title: "Aignition Global Education Alliance",
     description:
-      "A comprehensive web-based ecosystem designed to streamline and enhance the management, participation, and analysis of global academic competitions. Features a public website, participant portal, and advanced admin dashboard for managing contests, programs, and educational initiatives worldwide.",
-    github: "https://github.com/AllenDG/aignition_frontend", // Update with actual repo
-    live: "https://aignition-platform.vercel.app", // Update with actual live link
+      "A comprehensive web-based ecosystem designed to streamline and enhance academic competition management for educational institutions globally. This multi-platform solution integrates public engagement, participant management, and administrative oversight into a cohesive digital experience that serves diverse stakeholders across international educational programs.",
+    github: "https://github.com/AllenDG/aignition_frontend",
+    live: "https://aignition-platform.vercel.app",
     tag: "Development",
-    image: aignitionMain, // Update with actual image path
+    image: aignitionMain,
     techStack: [
-      "ReactJS",
-      "TypeScript",
-      "Tailwind CSS",
-      "Zustand",
-      "Supabase",
       "JotForm Integration",
+      "ReactJS",
+      "Supabase",
+      "Tailwind CSS",
+      "TypeScript",
+      "Zustand",
     ],
+
     story:
-      "The Aignition Global Education Alliance project represents a ambitious initiative to revolutionize global academic competition management through technology. Developed for an educational organization focused on empowering youth through innovation and collaboration, this comprehensive ecosystem addresses the complex challenges of managing international academic competitions like the Amerasian Tesla Olympiad. The platform needed to serve multiple stakeholders: the general public seeking information about competitions, participants managing their contest journey, and administrators overseeing complex operational workflows including contestant verification, scoring, awarding, and content management across multiple educational programs and summer camps.",
+      "The Aignition Global Education Alliance project represents an ambitious initiative to revolutionize global academic competition management through thoughtful digital transformation. Born from the recognition that traditional competition administration was fragmented and inefficient, this platform was conceived to create a unified ecosystem that could seamlessly serve multiple stakeholder groups while maintaining the integrity and excitement of academic competitions. The project required careful consideration of diverse user needs, from students participating in contests to administrators managing complex international programs.",
+
     impact:
-      "The platform successfully digitized and streamlined the entire academic competition lifecycle, from public engagement to final awarding ceremonies. The system enhanced operational efficiency by providing automated contestant verification, real-time scoring management, and comprehensive reporting capabilities. Participants gained access to a centralized portal for contest registration, schedule tracking, and results viewing, while administrators benefited from powerful tools for managing complex multi-round competitions, summer programs, and global educational initiatives. The solution significantly improved the user experience for international participants and reduced administrative overhead for competition organizers.",
+      "The platform successfully digitized and streamlined the entire academic competition lifecycle, creating a seamless experience that spans from initial program discovery to final award distribution. By automating previously manual processes and providing real-time visibility into competition progress, the system eliminated administrative bottlenecks while ensuring fair and transparent evaluation processes. The integrated approach enabled the organization to scale their educational programs more effectively while maintaining high standards of participant engagement and administrative oversight.",
+
     role: "webdev",
+
     challenges:
-      "Building a platform that serves diverse user groups with varying technical expertise presented significant UX design challenges. Creating intuitive interfaces for participants from different educational backgrounds while providing sophisticated administrative tools required careful information architecture planning. Technical challenges included implementing complex ranking systems with configurable scoring methods, managing multi-round contest workflows, integrating third-party services like JotForm for registration, and ensuring real-time data synchronization across participant and admin portals. Security was paramount given the sensitive nature of contest data, participant information, and competition integrity requirements.",
+      "Building a platform that serves diverse user groups with varying technical expertise presented significant UX design challenges, requiring careful balance between functionality and accessibility. The complexity of managing multiple competition formats, scoring systems, and participant verification processes demanded robust system architecture and careful data modeling. Additionally, ensuring seamless integration with third-party services while maintaining system reliability and security across international usage patterns required extensive testing and optimization.",
+
     goal: [
-      "Create a unified digital ecosystem that transforms traditional paper-based academic competition management into efficient, scalable online workflows supporting global educational initiatives.",
-      "Develop user-centric interfaces that serve three distinct user groups: general public visitors, competition participants, and administrative staff, each with tailored experiences and functionality.",
-      "Implement comprehensive contest management capabilities including automated verification systems, flexible scoring mechanisms, real-time ranking updates, and detailed reporting tools for educational program analysis.",
-      "Build a scalable architecture that can accommodate multiple competition types, summer programs, and educational initiatives while maintaining data integrity and security standards for international academic competitions.",
+      "Create a unified digital ecosystem that integrates public outreach, participant engagement, and administrative management into one cohesive platform",
+      "Develop user-centric interfaces for public visitors, competition participants, and program administrators that prioritize usability and accessibility",
+      "Implement comprehensive contest management capabilities that support multiple competition formats and complex evaluation criteria",
+      "Build a scalable architecture that can accommodate growing participation and expanding program offerings across global markets",
     ],
+
     keyResponsibilities:
-     "Collaborated with a development team as a UI/UX designer and frontend developer across all three platform modules: main website, participant portal, and admin dashboard. Contributed to designing and implementing responsive user interfaces for complex workflows including contest registration, participant verification, scoring management, and content administration.", 
+      "Collaborated with a development team as a UI/UX designer and frontend developer, contributing to architectural decisions and leading the implementation of user-facing features. Participated in requirements gathering sessions with stakeholders to ensure the platform addressed real-world operational needs. Focused on creating consistent user experiences across the three distinct platform modules while maintaining code quality and performance standards throughout the collaborative development process.",
+
     features: [
       "Multi-module ecosystem with public website, participant portal, and admin dashboard",
       "Comprehensive contest management with multi-round competition support",
       "Automated participant verification and scoring systems",
       "Real-time ranking and award distribution capabilities",
       "Integrated summer camp and educational program management",
-      "Advanced content management system for dynamic website updates",
-      "Role-based authentication with secure access controls",
-      "Third-party integrations for registration and form handling",
-      "Responsive design optimized for global accessibility",
-      "Comprehensive notification and communication systems",
+      "Advanced content management system",
+      "Role-based authentication and access control",
+      "Third-party integrations for registration",
+      "Responsive design for global accessibility",
+      "Comprehensive notification and communication system",
       "Detailed analytics and reporting dashboards",
-      "Batch processing tools for efficient administrative workflows",
+      "Batch processing tools for admins",
     ],
-    takeaways:
-      "This project significantly enhanced my understanding of developing solutions for real-world business challenges while working collaboratively in a team environment. I gained valuable experience in stakeholder communication, requirements gathering, and translating business needs into technical specifications. The collaborative development process improved my skills in code coordination, task delegation, and maintaining consistent design standards across team contributions. The project strengthened my technical abilities in real-time data handling, third-party service integration, and creating user-centric interfaces that prioritize both functionality and accessibility. Most importantly, I learned how thoughtful technology implementation combined with effective teamwork can create measurable business impact and operational transformation.",
-    contributors: [
-      {
-        name: "Allen Walter De Guzman",
-        avatar: "/avatars/allen.png",
-      },
-      // Add other contributors as needed
-    ],
-    featureImages: [
-      {
-        image: aignitionLogin,
-        label: "User- Login Page",
-      },
-      {
-        image: aignitionRegister,
-        label: "User- Register Page",
-      },
-      {
-        image: aignitionLanding,
-        label: "User- About Page",
-      },
-      {
-        image: aignitionSummerCamp,
-        label: "User- Summer Camp Page",
-      },
-      {
-        image: aignitionTimeline,
-        label: "User- Timeline Page",
-      },
-      {
-        image: aignitionContact,
-        label: "User- Contact Page",
-      },
 
-      //user portal
+    takeaways:
+      "This project significantly enhanced my understanding of developing solutions for real-world business challenges while working collaboratively in a team environment. I gained valuable experience in stakeholder communication, requirements gathering, and translating business needs into technical specifications that could be effectively implemented by a development team. The collaborative development process improved my skills in code coordination, task delegation, and maintaining consistent design standards across team contributions. The project strengthened my technical abilities in real-time data handling, third-party service integration, and creating user-centric interfaces that prioritize both functionality and accessibility. Most importantly, I learned how thoughtful technology implementation combined with effective teamwork can create measurable business impact and operational transformation.",
+
+    contributors: getContributors("Aignition Global Education Alliance"),
+
+    featureImages: [
+      { image: aignitionLogin, label: "User- Login Page" },
+      { image: aignitionRegister, label: "User- Register Page" },
+      { image: aignitionLanding, label: "User- About Page" },
+      { image: aignitionSummerCamp, label: "User- Summer Camp Page" },
+      { image: aignitionTimeline, label: "User- Timeline Page" },
+      { image: aignitionContact, label: "User- Contact Page" },
       {
         image: userPortalDashboard,
         label: "UserPortal- User Portal Dashboard",
       },
-      {
-        image: userPortalContent,
-        label: "UserPortal- User Portal Contests",
-      },
-
-      //admin
-      {
-        image: aignitionAdminDashboard,
-        label: "Admin- Admin Dashboard",
-      },
-      {
-        image: userManagement,
-        label: "Admin- User Management ",
-      },
-      {
-        image: programManagement,
-        label: "Admin- Program Management",
-      },
-      {
-        image: contestManagement,
-        label: "Admin- Contest Management",
-      },
-      {
-        image: contestantManagement,
-        label: "Admin- Contestant Management",
-      },
-      {
-        image: contentManagement,
-        label: "Admin- Content Management",
-      },
-      {
-        image: contactManagement,
-        label: "Admin- Contact Management",
-      },
+      { image: userPortalContent, label: "UserPortal- User Portal Contests" },
+      { image: aignitionAdminDashboard, label: "Admin- Admin Dashboard" },
+      { image: userManagement, label: "Admin- User Management" },
+      { image: programManagement, label: "Admin- Program Management" },
+      { image: contestManagement, label: "Admin- Contest Management" },
+      { image: contestantManagement, label: "Admin- Contestant Management" },
+      { image: contentManagement, label: "Admin- Content Management" },
+      { image: contactManagement, label: "Admin- Contact Management" },
     ],
   },
 ];
