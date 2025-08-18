@@ -7,7 +7,7 @@ export default function KnowMoreButton() {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/app/about-page");
+    navigate("/about");
   };
 
   return (

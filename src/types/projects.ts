@@ -81,7 +81,7 @@ export const projects: Project[] = [
       "A comprehensive gym management platform that streamlines operations through smart technology, transforming traditional manual processes into efficient digital workflows that enhance both administrative efficiency and member experience.",
     github: "https://github.com/AllenDG/gym_frontend",
     live: "https://gym-frontend-lac.vercel.app/login",
-    tag: "Development",
+    tag: "Frontend, designer",
     image: gym,
     techStack: ["ReactJS", "Supabase", "Tailwind CSS", "TypeScript", "Zustand"],
 
@@ -138,8 +138,8 @@ export const projects: Project[] = [
     description:
       "A comprehensive web-based ecosystem designed to streamline and enhance academic competition management for educational institutions globally. This multi-platform solution integrates public engagement, participant management, and administrative oversight into a cohesive digital experience that serves diverse stakeholders across international educational programs.",
     github: "https://github.com/AllenDG/aignition_frontend",
-    live: "https://aignition-platform.vercel.app",
-    tag: "Development",
+    live: "https://aignition-frontend.vercel.app/",
+    tag: "Frontend, Designer",
     image: aignitionMain,
     techStack: [
       "JotForm Integration",
@@ -147,7 +147,9 @@ export const projects: Project[] = [
       "Supabase",
       "Tailwind CSS",
       "TypeScript",
-      "Zustand",
+      "Rest API",
+      "Vite",
+      "ShadCN",
     ],
 
     story:

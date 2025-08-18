@@ -5,13 +5,16 @@ import { projects, type Project } from "@/types/projects";
 import CaseStudyHeader from "./screens/CaseStudyHeader";
 import ProjectStory from "./screens/ProjectStory";
 
+// Import the special Aignition image
+import frame27685 from "@/assets/images/Frame 27685.png";
+
 // Helper function to create slug
 const createSlug = (title: string): string => {
   return title
     .toLowerCase()
-    .replace(/[^a-z0-9 -]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
+    .replace(/[^a-z0-9 -]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
     .trim();
 };
 
@@ -23,7 +26,7 @@ export default function CaseStudy() {
   let project: Project | undefined = location.state?.project;
 
   if (!project && slug) {
-    project = projects.find(p => createSlug(p.title) === slug);
+    project = projects.find((p) => createSlug(p.title) === slug);
   }
 
   if (!project) {
@@ -31,7 +34,7 @@ export default function CaseStudy() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Project Not Found</h1>
-          <Button onClick={() => navigate('/')} variant="outline">
+          <Button onClick={() => navigate("/")} variant="outline">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Home
           </Button>
@@ -45,7 +48,7 @@ export default function CaseStudy() {
       <div className="w-full max-w-6xl space-y-12">
         {/* Back Button */}
         <div className="w-full">
-          <Button onClick={() => navigate('/')} variant="outline">
+          <Button onClick={() => navigate("/")} variant="outline">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Projects
           </Button>
@@ -56,11 +59,15 @@ export default function CaseStudy() {
           <div className="space-y-6">
             <CaseStudyHeader project={project} />
           </div>
-          <div className="flex items-center justify-center h-[400px]">
+          <div className="flex items-center justify-center overflow-clip  w-[100%] h-[640px] shadow-md">
             <img
-              src={project.image}
+              src={
+                project.title === "Aignition Global Education Alliance"
+                  ? frame27685
+                  : project.image
+              }
               alt={project.title}
-              className="object-cover rounded-lg w-full h-full shadow-md"
+              className="object-cover scale-200 transition-transform duration-300"
             />
           </div>
         </div>
