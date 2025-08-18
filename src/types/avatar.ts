@@ -22,14 +22,14 @@ export const contributorsData: Record<ProjectTitle, ContributorDetail[]> = {
     },
     {
       name: "Allen Walter De Guzman",
-      designation: "Frontend Developer",
+      designation: "Frontend Developer | UI UX Designer",
       image: allen,
     },
   ],
   "Aignition Global Education Alliance": [
     {
       name: "Christian Fernandez",
-      designation: "Lead UI UX Designer/Solutions Designer",
+      designation: "Lead UI UX Designer| Solutions Designer",
       image: cilan,
     },
     {
@@ -44,7 +44,7 @@ export const contributorsData: Record<ProjectTitle, ContributorDetail[]> = {
     },
     {
       name: "Allen Walter De Guzman",
-      designation: "Frontend Developer/UI UX Designer",
+      designation: "Frontend Developer | UI UX Designer",
       image: allen,
     },
     {

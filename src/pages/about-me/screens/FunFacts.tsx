@@ -25,7 +25,7 @@ export default function FunFacts() {
 
   return (
     <section className="w-full max-w-7xl mx-auto px-6 py-20 space-y-10">
-      <div className="text-center space-y-4 ">
+      <div className="text-center space-y-4">
         <h2 className="text-3xl font-bold text-foreground">
           Fun Facts About Me
         </h2>
@@ -33,13 +33,16 @@ export default function FunFacts() {
           When I’m not designing or coding, I enjoy a range of hobbies that keep
           me inspired and balanced.
         </p>
+        <p className="text-sm text-muted-foreground italic">
+          👉 Please click on the cards to reveal more fun facts.
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {funFacts.map((fact, idx) => (
           <div
             key={idx}
-            className="relative w-full h-72 cursor-pointer [perspective:1000px] "
+            className="relative w-full h-72 cursor-pointer [perspective:1000px]"
             onClick={() => handleFlip(idx)}
           >
             <div
@@ -49,7 +52,9 @@ export default function FunFacts() {
               )}
             >
               {/* Front */}
-              <div className="absolute inset-0 z-20 flex items-center justify-center px-4 text-xl font-semibold text-foreground bg-white dark:bg-neutral-900 border border-border rounded-2xl backface-hidden"></div>
+              <div className="absolute inset-0 z-20 flex items-center justify-center px-4 text-xl font-semibold text-foreground bg-white dark:bg-neutral-900 border border-border rounded-2xl backface-hidden">
+                Click Me
+              </div>
 
               {/* Back */}
               <div className="absolute inset-0 z-10 flex items-center justify-center px-6 text-sm text-center text-muted-foreground bg-white dark:bg-neutral-800 border border-border rounded-2xl rotate-y-180 backface-hidden">

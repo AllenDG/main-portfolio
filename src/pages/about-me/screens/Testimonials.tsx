@@ -7,8 +7,9 @@ import shania from "@/assets/images/shania.jpg"
 
 const testimonials = [
   {
-    quote:
-      "Certified Vibe Coder",
+   quote:  
+  "Allen is a hardworking and collaborative team player. He listens well to guidance, adapts quickly, and is always eager to learn and improve.", 
+
     name: "Dave Charm Barboco Bulaquena  ",
     designation: "Solutions Designer/ Developer",
     company: "Stratpoint Global Outsourcing Inc",

@@ -1,30 +1,49 @@
 export default function Designer() {
   const steps = [
     {
-      step: "1. Understand client needs and goals",
+      step: "1. Gather requirements & analyze BRD",
       description:
-        "Discuss with stakeholders to identify pain points and goals.",
+        "Review the Business Requirements Document and meet with stakeholders to fully understand needs and goals.",
     },
     {
-      step: "2. Create user personas & journey maps",
-      description: "Define audience and visualize the user experience journey.",
-    },
-    {
-      step: "3. Sketch user flows & wireframes",
-      description: "Map out main screens and their logical navigation paths.",
-    },
-    {
-      step: "4. Build low-fidelity mockups",
-      description: "Design layout without colors or styles to plan structure.",
-    },
-    {
-      step: "5. Create high-fidelity mockups in Figma",
-      description: "Design detailed, polished UI screens with real content.",
-    },
-    {
-      step: "6. User testing & iteration",
+      step: "2. Create user stories & story map",
       description:
-        "Validate the UI with real users and improve based on feedback.",
+        "Break down features into user stories and map them to visualize priorities and workflows.",
+    },
+    {
+      step: "3. Define user personas & journey maps",
+      description:
+        "Identify target users, their goals, pain points, and illustrate their end-to-end experience.",
+    },
+    {
+      step: "4. Build product roadmap",
+      description:
+        "Outline feature delivery timeline and align design milestones with development phases.",
+    },
+    {
+      step: "5. Design process flows",
+      description:
+        "Map detailed process flows to ensure clarity in navigation, decision points, and user actions.",
+    },
+    {
+      step: "6. Sketch user flows & wireframes",
+      description:
+        "Draft the main screens and logical navigation structure with low-fidelity sketches.",
+    },
+    {
+      step: "7. Create low-fidelity mockups",
+      description:
+        "Design the basic layout without colors or styles to establish the structure and hierarchy.",
+    },
+    {
+      step: "8. Build high-fidelity mockups in Figma",
+      description:
+        "Design detailed, polished UI screens with colors, typography, and real content.",
+    },
+    {
+      step: "9. Conduct user testing & iterate",
+      description:
+        "Test the designs with real users, gather feedback, and refine the solution for better usability.",
     },
   ];
 

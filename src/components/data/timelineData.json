@@ -11,8 +11,9 @@
       {
         "heading": "Freelance Projects",
         "details": [
-          "Admin Gym Management System — A web-based platform designed to help gym administrators efficiently manage client subscriptions, monitor payment history, and track daily check-ins and logs. I was responsible for designing the mockups and developing the frontend.",
-          "Hiring Management System — A recruitment-focused system developed to streamline job postings, application tracking, and candidate evaluation for recruiters and HR departments. I designed the interface workflows and developed the frontend."
+          "Admin Gym Management System - A web-based platform designed to help gym administrators efficiently manage client subscriptions, monitor payment history, and track daily check-ins and logs. I was responsible for designing the mockups and developing the frontend.",
+          "Hiring Management System - A recruitment-focused system developed to streamline job postings, application tracking, and candidate evaluation for recruiters and HR departments. I designed the interface workflows and developed the frontend.",
+         "Aignition Global Education Alliance - A platform developed to transform global academic competition management by providing a unified ecosystem for students, administrators, and organizations. I contributed by designing the UI/UX, developing the frontend, and collaborating with the team using Gitflow and ClickUp."
         ]
       }
     ]
