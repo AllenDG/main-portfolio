@@ -7,6 +7,7 @@ import ProjectStory from "./screens/ProjectStory";
 
 // Import the special Aignition image
 import frame27685 from "@/assets/images/Frame 27685.png";
+import frame27717 from "@/assets/images/Frame 27717.png";
 
 // Helper function to create slug
 const createSlug = (title: string): string => {
@@ -64,6 +65,8 @@ export default function CaseStudy() {
               src={
                 project.title === "Aignition Global Education Alliance"
                   ? frame27685
+                  : project.title === "Gym Management System"
+                  ? frame27717
                   : project.image
               }
               alt={project.title}
