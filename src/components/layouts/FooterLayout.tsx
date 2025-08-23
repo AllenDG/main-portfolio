@@ -14,7 +14,7 @@ export default function FooterLayout() {
         {/* Right - Social Icons */}
         <div className="flex gap-4 ">
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/pickaro_/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition-colors"
@@ -22,7 +22,7 @@ export default function FooterLayout() {
             <Instagram className="h-5 w-5" />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/allenwalterdg/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition-colors"
@@ -30,7 +30,7 @@ export default function FooterLayout() {
             <Linkedin className="h-5 w-5" />
           </a>
           <a
-            href="https://github.com"
+            href="https://github.com/AllenDG"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition-colors"
