@@ -8,6 +8,7 @@ import paymentLogs from "@/assets/images/gym-management/payment-logs.jpg";
 import systemSettings from "@/assets/images/gym-management/system-settings.jpg";
 import userDashboard from "@/assets/images/gym-management/user-dashboard.png";
 import userLogs from "@/assets/images/gym-management/user-logs.png";
+import processFlowGym from "@/assets/images/gym-management/process_diagram.png";
 
 // Aignition Global Education
 import aignitionMain from "@/assets/images/aignition/main.png";
@@ -28,8 +29,21 @@ import userPortalDashboard from "@/assets/images/aignition/user-portal-dashboard
 import userPortalContent from "@/assets/images/aignition/user-portal-content.png";
 import { contributorsData, type ProjectTitle } from "./avatar";
 
-// ─── Utility ────────────────────────────────────────────────────
+// Dormitory
+import dormMain from "@/assets/images/dormitory/dormotiry.png"; // correct spelling in your folder: "dormitiy.png"
+import dormLanding from "@/assets/images/dormitory/dormitory_2.png";
+import dormAbout from "@/assets/images/dormitory/dormitory_3.png";
+import dormPostPropery from "@/assets/images/dormitory/domitory_4.png";
+import dormView from "@/assets/images/dormitory/dormitory_5.png";
+import dormViewChat from "@/assets/images/dormitory/dormitory_6.png";
+import dormCalendarAppointment from "@/assets/images/dormitory/dormitory_7.png";
 
+import ownerDashboard from "@/assets/images/dormitory/dormitory_owner_1.png";
+import dormOwnerRental from "@/assets/images/dormitory/dormitory_owner_2.png";
+import dormOwnerTenants from "@/assets/images/dormitory/dormitory_owner_3.png"; // no owner_4.png in your folder
+
+import dormLogin from "@/assets/images/dormitory/login.png";
+import dormRegister from "@/assets/images/dormitory/register.png";
 const getContributors = (title: string) => {
   return (
     contributorsData[title as ProjectTitle]?.map((c) => ({
@@ -70,6 +84,9 @@ export type Project = {
   takeaways?: string;
   contributors?: Contributor[];
   featureImages?: FeatureImage[];
+  lowFidelity?: string;
+  highFidelity?: string;
+  processFlow?: string;
 };
 
 // ─── Project Data ──────────────────────────────────────────────
@@ -83,6 +100,7 @@ export const projects: Project[] = [
     live: "https://gym-frontend-lac.vercel.app/login",
     tag: "Frontend, designer",
     image: gym,
+    processFlow: processFlowGym,
     techStack: ["ReactJS", "Supabase", "Tailwind CSS", "TypeScript", "Zustand"],
 
     story:
@@ -212,6 +230,78 @@ export const projects: Project[] = [
       { image: contestantManagement, label: "Admin- Contestant Management" },
       { image: contentManagement, label: "Admin- Content Management" },
       { image: contactManagement, label: "Admin- Contact Management" },
+    ],
+  },
+
+  {
+    title: "Dormitory",
+    description:
+      "Dormitory is a digital platform designed to make student and young professional housing accessible, transparent, and hassle-free. It centralizes dormitory listings and connects tenants with owners, helping them find safe, affordable, and reliable accommodations while giving property managers the tools to manage rentals effectively.",
+    github: "https://github.com/AllenDG/Web-Dormitory",
+    live: "https://web-dormitory.vercel.app/",
+    tag: "Frontend, UI/UX",
+    image: dormMain,
+    processFlow: "",
+    techStack: ["ReactJS", "Tailwind CSS", "Javascript", "Firebase", "MUI"],
+
+    story:
+      "Dormitory emerged from recognizing the growing challenges students and young professionals face in finding safe, affordable housing. Traditional methods such as recommendations or scattered social media posts proved unreliable and time consuming. Our solution aimed to provide a centralized, user friendly app that enables tenants to search, filter, and inquire about dorms easily, while empowering property owners to efficiently manage their listings and reach a broader audience. By addressing both sides of the housing challenge, Dormitory bridges the gap between rising demand and limited accessibility.",
+
+    impact:
+      "The project streamlined the dorm hunting process for students by consolidating property information into a single, reliable platform. Tenants gained confidence in their housing choices through verified listings and direct communication with owners. Property managers benefited from simplified listing management, analytics insights, and increased visibility. Beyond the immediate functional improvements, Dormitory laid the groundwork for a scalable nationwide solution to student housing accessibility.",
+
+    role:"webdev",
+
+    challenges:
+      "Designing for two distinct user groups students/tenants and dorm owners—posed a challenge in balancing different needs within one cohesive platform. Ensuring verified and regularly updated listings was also critical to building trust. On the business side, convincing dorm owners to move away from traditional advertising methods to adopt the app required strong value propositions and user-centric design. Additionally, the UI/UX needed to remain simple and intuitive while incorporating advanced features like analytics and subscription management.",
+
+    goal: [
+      "Provide students and young professionals with a centralized, reliable, and easy-to-use platform for finding safe and affordable dorms.",
+      "Enable property owners to manage, track, and optimize their listings with built-in dashboards and analytics.",
+      "Build trust between tenants and property managers through verified listings, real-time availability, and direct communication.",
+      "Lay the foundation for scalability, expanding beyond Pangasinan to other major university hubs in the Philippines.",
+    ],
+
+    keyResponsibilities:
+      "Led the UI/UX design and frontend development, focusing on creating user flows, wireframes, and responsive layouts. Conducted research on student housing pain points to ensure the design addressed real needs. Developed both tenant- and owner-facing interfaces, ensuring a balance between usability and feature richness. Collaborated with team members to align design goals with business objectives and technical feasibility.",
+
+    features: [
+      // Student / Tenant
+      "Landing Page with filters and search functionality",
+      "Find Rentals page with advanced filters, price ranges, and map integration",
+      "About Us and How It Works pages for trust-building and onboarding",
+      "Direct chat for inquiries and scheduling with dorm managers",
+      "Ability for users to register as owners and post properties",
+
+      // Owner / Property Manager
+      "Dashboard with analytics and listing performance insights",
+      "Rental Table for managing property listings",
+      "Tenants Table for organizing tenant details",
+      "Settings for subscription management and profile updates",
+    ],
+
+    takeaways:
+     "This is my most outstanding project in my entire college academic year. It deepened my ability to design for multi-user platforms, requiring empathy for both tenants and property owners. It highlighted the importance of verification and trust in platforms dealing with essential needs like housing. I also gained valuable experience aligning business models (freemium and subscription) with user experience design, ensuring the product could sustain itself while providing value. Ultimately, Dormitory reinforced my belief that thoughtful, user-centered design can directly improve quality of life by solving real-world problems.",
+    contributors: getContributors("Dormitory"),
+
+    featureImages: [
+      { image: dormLogin, label: "User- Login Page" },
+      { image: dormRegister, label: "User- Register Page" },
+      { image: dormLanding, label: "User- Landing Page" },
+      { image: dormAbout, label: "User - About Page" },
+      { image: dormPostPropery, label: "User - Post Property" },
+      { image: dormView, label: "User - View Property" },
+      { image: dormViewChat, label: "User - Chat Inquiry" },
+      {
+        image: dormCalendarAppointment,
+        label: "User - Calendar & Appointments",
+      },
+
+      // Owner / Property Manager
+      { image: ownerDashboard, label: "Admin - Dashboard" },
+      { image: dormOwnerRental, label: "Admin - Rentals Management" },
+      { image: dormOwnerTenants, label: "Admin - Dorm Settings" },
+
     ],
   },
 ];

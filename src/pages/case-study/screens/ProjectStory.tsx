@@ -6,6 +6,7 @@ import {
   ClipboardList,
   Zap,
   Users,
+  Workflow,
 } from "lucide-react";
 import type { Project } from "@/types/projects";
 import { AnimatedAvatarTooltip } from "@/components/ui/animated-tooltip";
@@ -13,11 +14,10 @@ import { AnimatedAvatarTooltip } from "@/components/ui/animated-tooltip";
 export default function ProjectStory({ project }: { project: Project }) {
   const featureImages = project.featureImages || [];
 
-  // Filter screenshots by different user types
   const publicScreenshots = featureImages.filter((img) => {
     const label = img.label.toLowerCase();
     return (
-      label.startsWith("user-") &&
+      label.startsWith("user") &&
       !label.includes("user portal") &&
       !label.includes("admin")
     );
@@ -51,7 +51,9 @@ export default function ProjectStory({ project }: { project: Project }) {
           <h2 className="text-xl font-semibold text-foreground mb-2 flex items-center gap-2">
             <ClipboardList className="w-5 h-5 text-primary" /> Project Story
           </h2>
-          <p className="text-muted-foreground leading-relaxed">{project.story}</p>
+          <p className="text-muted-foreground leading-relaxed">
+            {project.story}
+          </p>
         </div>
 
         {project.impact && (
@@ -59,7 +61,9 @@ export default function ProjectStory({ project }: { project: Project }) {
             <h3 className="text-xl font-semibold text-foreground mb-2 flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-primary" /> Impact
             </h3>
-            <p className="text-muted-foreground leading-relaxed">{project.impact}</p>
+            <p className="text-muted-foreground leading-relaxed">
+              {project.impact}
+            </p>
           </div>
         )}
 
@@ -68,7 +72,9 @@ export default function ProjectStory({ project }: { project: Project }) {
             <h3 className="text-xl font-semibold text-foreground mb-2 flex items-center gap-2">
               <AlertTriangle className="w-5 h-5 text-primary" /> Challenges
             </h3>
-            <p className="text-muted-foreground leading-relaxed">{project.challenges}</p>
+            <p className="text-muted-foreground leading-relaxed">
+              {project.challenges}
+            </p>
           </div>
         )}
 
@@ -90,7 +96,8 @@ export default function ProjectStory({ project }: { project: Project }) {
         {project.keyResponsibilities && (
           <div className="border-t pt-6">
             <h3 className="text-xl font-semibold text-foreground mb-2 flex items-center gap-2">
-              <ClipboardList className="w-5 h-5 text-primary" /> Key Responsibilities
+              <ClipboardList className="w-5 h-5 text-primary" /> Key
+              Responsibilities
             </h3>
             <p className="text-muted-foreground leading-relaxed">
               {project.keyResponsibilities}
@@ -108,6 +115,20 @@ export default function ProjectStory({ project }: { project: Project }) {
                 <li key={index}>{feature}</li>
               ))}
             </ul>
+          </div>
+        )}
+
+        {/* Process Flow Section */}
+        {project.processFlow && (
+          <div className="border-t pt-6">
+            <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+              <Workflow className="w-5 h-5 text-primary" /> Process Flow
+            </h3>
+            <img
+              src={project.processFlow}
+              alt="Process Flow"
+              className="rounded border w-full object-contain"
+            />
           </div>
         )}
 
